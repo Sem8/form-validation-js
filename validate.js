@@ -3,8 +3,10 @@ function ValidateForm() {
     let phoneNum = document.getElementById('phoneNum');
     let password = document.getElementById('password');
     let confirm_password = document.getElementById('confirm_password');
-    let valid = true
 
+    removeMessage();
+
+    let valid = true
     // console.log(username.value);
 
     if (username.value.length == 0) {
@@ -31,4 +33,16 @@ function ValidateForm() {
         valid = false;
     }
     return valid;
+}
+
+function removeMessage() {
+    let errorInput = document.querySelectorAll('.wrong-input');
+    [].forEach.call(errorInput, function(eachElement) {
+        eachElement.classList.remove('wrong-input');
+    });
+
+    let errorText = document.querySelectorAll('.error');
+    [].forEach.call(errorText, function(eachParaElement) {
+        eachParaElement.innerHTML = '';
+    });
 }
