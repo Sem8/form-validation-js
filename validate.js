@@ -9,7 +9,7 @@ function ValidateForm() {
     let valid = true
     // console.log(username.value);
 
-    if (username.value.length == 0) {
+    if (username.value.length == 0 || username.value.trim() == '') {
         username.className = 'wrong-input';
         username.nextElementSibling.innerHTML = 'Please type in a User name, it cannot be blank';
         valid = false;
